@@ -1,0 +1,7 @@
+{
+  "name": "TikTok Slides Maker",
+  "description": "A production-ready batch slide creator for TikTok, YouTube Shorts, and Reels. Generate motivational content with bold text overlays, templates, and CSV integration.",
+  "requestFramePermissions": [
+    "camera"
+  ]
+}
