@@ -12,15 +12,27 @@ export interface SlideTextLayer {
   id: string;
   type: TextLayerType;
   content: string;
-  fontSize?: number; // Override global font size
-  fontFamily?: string; // Override global font family
+  customName?: string;
+  fontSize?: number;
+  fontFamily?: string;
+  width?: number; // Width as percentage of slide (0-100)
+  x: number; // Percentage 0-100
+  y: number; // Percentage 0-100
+  selected?: boolean;
+  alignment?: 'left' | 'center' | 'right';
+  lineHeight?: number;
+  letterSpacing?: number;
+  stroke?: boolean;
+  strokeColor?: string;
+  strokeWidth?: number;
+  uppercase?: boolean;
 }
 
 export interface SlideData {
   id: string;
-  image: string; // Base64 or Blob URL
+  image: string;
   layers: SlideTextLayer[];
-  template: string; // Changed from TemplateType to string to support custom presets
+  template: string;
   settings: TextSettings;
   effects: ImageEffects;
 }
@@ -32,12 +44,13 @@ export interface TextSettings {
   strokeColor: string;
   strokeWidth: number;
   shadow: boolean;
-  shadowBlur: number; // 0 to 100
+  shadowBlur: number;
+  shadowOpacity: number;
   shadowColor?: string;
   shadowOffsetX?: number;
   shadowOffsetY?: number;
-  positionX: number; // 0 to 100
-  positionY: number; // 0 to 100
+  positionX: number; // Global baseline (fallback)
+  positionY: number; // Global baseline (fallback)
   alignment: 'left' | 'center' | 'right';
   constrainToSlide?: boolean;
 }
@@ -45,10 +58,11 @@ export interface TextSettings {
 export interface ImageEffects {
   enabled: boolean;
   grayscale: boolean;
-  brightness: number; // 0 to 200
-  contrast: number; // 0 to 200
-  imageOffset: number; // Horizontal pan: 0 to 100
-  imageOffsetY: number; // Vertical pan: 0 to 100
+  brightness: number;
+  contrast: number;
+  saturation: number;
+  imageOffset: number;
+  imageOffsetY: number;
 }
 
 export interface CSVColumnMapping {

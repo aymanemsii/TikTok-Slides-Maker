@@ -14,7 +14,12 @@
     "@google/genai": "^1.34.0",
     "react": "^19.2.3",
     "jszip": "^3.10.1",
-    "papaparse": "^5.5.3"
+    "papaparse": "^5.5.3",
+    "express": "^5.2.1",
+    "path": "^0.12.7",
+    "url": "^0.11.4",
+    "cors": "^2.8.5",
+    "canvas": "^3.2.1"
   },
   "devDependencies": {
     "@types/node": "^22.14.0",
